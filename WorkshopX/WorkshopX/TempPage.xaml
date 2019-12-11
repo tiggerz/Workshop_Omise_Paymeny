@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WorkshopX.TempPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0.5,1,0.8" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                    <StackLayout
+                        Margin="20,0"
+                        BackgroundColor="Aqua"
+                        Orientation="Vertical">
+                        <Label x:Name="xxx" Text="ระบุและยืนยันข้อมูลส่วนตัว" />
+                        <Label Text="ข้อมูลส่วนตัวลูกค้า" />
+                        <Label Text="ชื่อนามสกุลภาษาไทย" />
+                        <Entry IsEnabled="False" Text="nuttaphongggggggggg" />
+                        <Label Text="เพศ" />
+                        <Entry IsEnabled="False" Text="ชาย" />
+                        <Label Text="สัญชาติ" />
+                        <Entry IsEnabled="False" Text="ไทย" />
+                        <Label Text="อายุ" />
+                        <Entry IsEnabled="False" Text="41" />
+                        <Label Text="วัน/เดือน/ปี เกิด" />
+                        <Entry IsEnabled="False" Text="15 กย 1111" />
+                        <Label Text="หมายเลขบัตรประจำตัวประชาชน" />
+                        <Entry IsEnabled="False" Text="1234567890123" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0"
+                        Padding="0"
+                        BackgroundColor="Gray"
+                        HorizontalOptions="Fill"
+                        Orientation="Horizontal"
+                        VerticalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="xxx" />
+                        <Label HorizontalOptions="StartAndExpand" Text="xxx" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0"
+                        Padding="0"
+                        AbsoluteLayout.LayoutBounds="0,0.9,1,0.1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Red"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="Center">
+                        <Label Text="หากข้อมูลส่วนตัวของท่านไม่ถูกต้อง" />
+                        <Label
+                            Text="กดที่นี่"
+                            TextColor="Blue"
+                            TextDecorations="Underline" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <Button
+                AbsoluteLayout.LayoutBounds="0,1,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                Text="ถัดไป" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             mc:Ignorable="d"
+             x:Class="WorkshopX.Payment">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <!--<Image Source="payment_bar.png" HorizontalOptions="FillAndExpand"/>-->
+            <Label Text="ชำระเงิน" FontSize="20" FontFamily="SukhumvitSet-Bold.ttf#SukhumvitSet-Bold" HorizontalOptions="CenterAndExpand" Margin="0,0,50,0" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#F1F1F1">
+                <Image Source="step2.png" HorizontalOptions="FillAndExpand"/>
+                <Label Text="เลือกวิธิการชำระเงิน" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="StartAndExpand" Margin="30,20,30,0"/>
+                <Image Source="card.png" Margin="30,0,30,0"/>
+                <StackLayout BackgroundColor="White" Margin="30,0,30,0">
+                    <StackLayout>
+                        <input:RadioButtonGroupView x:Name="radioGroup" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                            <input:RadioButton x:Name="masterCard" Value="1" Scale="0.7" Clicked="masterCard_Clicked">
+                                <Image Source="master_card.png" HeightRequest="70" WidthRequest="70"/>
+                            </input:RadioButton>
+                            <input:RadioButton x:Name="visa" Value="2" Scale="0.7" Clicked="visa_Clicked">
+                                <Image Source="visa.png" HeightRequest="70" WidthRequest="70"/>
+                            </input:RadioButton>
+                            <input:RadioButton x:Name="jcb" Value="3" Scale="0.7" Clicked="jcb_Clicked">
+                                <Image Source="jcb.png" HeightRequest="70" WidthRequest="70"/>
+                            </input:RadioButton>
+                        </input:RadioButtonGroupView>
+                    </StackLayout>
+                    <StackLayout Margin="20,0,20,40">
+                        <input:AdvancedEntry x:Name="CardNumber"
+                                             Placeholder="หมายเลขบัตรเครดิต"
+                                             CornerRadius="5"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             Annotation="DigitsOnly"
+                                             MaxLength="16"
+                                             TextChanged="CardNumber_TextChanged"
+                                     TextColor="Black"
+                                             
+                        />
+                        <input:AdvancedEntry x:Name="CardName"
+                                             Placeholder="ชื่อบนบัตร"
+                                             CornerRadius="5"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                            TextColor="Black"
+                                            TextChanged="CardName_TextChanged" 
+                                             MaxLength="20"
+                        />
+                        <StackLayout Orientation="Horizontal">
+                            <input:AdvancedEntry x:Name="ExDate"
+                                             Placeholder="วันหมดอายุ (ดด/ปป)"
+                                             CornerRadius="5"
+                                             MaxLength="5"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             HorizontalOptions="FillAndExpand"
+                                             TextChanged="ExDate_TextChanged"
+                                             Annotation="DigitsOnly"
+                                     TextColor="Black"
+                        />
+                            <input:AdvancedEntry x:Name="Ccv"
+                                             Placeholder="CVV 3 หลัก"
+                                             CornerRadius="5"
+                                             Annotation="DigitsOnly"
+                                             IsPassword="True"
+                                             MaxLength="3"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                     TextColor="Black"
+                                                 HorizontalOptions="FillAndExpand"
+                        />
+                            
+                        </StackLayout>
+                        <input:AdvancedEntry x:Name="tempInput"
+                                             CornerRadius="5"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                     TextColor="Black"
+                                                 HorizontalOptions="FillAndExpand"
+                        />
+                    </StackLayout>
+                </StackLayout>
+                <Image Source="guarantee.png" Margin="30,0,30,0"/>
+                <StackLayout BackgroundColor="White">
+                    <StackLayout Margin="30,30,30,30">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="ราคารวม" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="StartAndExpand"/>
+                            <Label x:Name="priceSum" Text="xx" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="บาท" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="ภาษีมูลค่าเพิ่ม 7 %" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="StartAndExpand"/>
+                            <Label x:Name="vatPercent" Text="xxx" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="บาท" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="จำนวนเงินที่ต้องชำระ" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="StartAndExpand"/>
+                            <Label x:Name="totalPrice" Text="xx" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="EndAndExpand" TextColor="red"/>
+                            <Label Text="บาท" FontSize="16" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <ActivityIndicator x:Name="loading" IsRunning="True" IsVisible="False"></ActivityIndicator>
+                <Button x:Name="bntOk" Text="ชำระเงิน" BackgroundColor="Red" TextColor="White" FontSize="18" Margin="50,30,50,0" CornerRadius="5" WidthRequest="200"  FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="FillAndExpand" Clicked="Ok_Clicked"/>
+                <Button x:Name="bntTest" Text="ทดสอบ" BackgroundColor="Red" TextColor="White" FontSize="18" Margin="50,0,50,50" CornerRadius="5" WidthRequest="200"  FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="FillAndExpand" Clicked="bntTest_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasBackButton="True"
+             x:Class="WorkshopX.Policy"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="นโยบายการจอง" FontSize="20" FontFamily="SukhumvitSet-Bold.ttf#SukhumvitSet-Bold" HorizontalOptions="CenterAndExpand" Margin="0,0,50,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Image Source="step1.png" HorizontalOptions="FillAndExpand"/>
+                <!--<WebView Source="https://bootcamp-static.s3-ap-southeast-1.amazonaws.com/policy.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>-->
+                <Image Source="policy.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Button x:Name="ok" Text="ยอมรับข้อตกลง" BackgroundColor="Red" TextColor="White" FontSize="18" Margin="50,0,50,50" CornerRadius="5" WidthRequest="200"  FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" HorizontalOptions="FillAndExpand" Clicked="ok_Clicked"
+                    />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

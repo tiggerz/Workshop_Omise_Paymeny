@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkshopX.Login"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             BackgroundImageSource="bg.png"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ลงชื่อเข้าใช้งาน" FontSize="20" HorizontalOptions="CenterAndExpand" FontFamily="SukhumvitSet-Bold.ttf#SukhumvitSet-Bold" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Margin="40,130,40,20" VerticalOptions="FillAndExpand">
+            <ScrollView>
+            <StackLayout >
+                    <StackLayout BackgroundColor="White" Padding="20" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+                        <input:AdvancedEntry x:Name="userName"
+                                             Placeholder="ชื่อผู้ใช้"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             TextChanged="userName_TextChanged"
+                        />
+                        <input:AdvancedEntry  x:Name="loginPassword"
+                                              IsPassword="True"
+                                              Placeholder="รหัสผ่าน"
+                                              TextColor="Black"
+                                              CornerRadius="5"
+                                              Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                              TextChanged="loginPassword_TextChanged"
+                        />
+                        <Image Source="hbar.png" HorizontalOptions="FillAndExpand"/>
+                        <input:AdvancedEntry x:Name="firstName"
+                                             Placeholder="ชื่อ"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             TextChanged="firstName_TextChanged"
+                        />
+                        <input:AdvancedEntry x:Name="lastName"
+                                             Placeholder="นามสกุล"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             TextChanged="lastName_TextChanged"
+                        />
+                        <input:AdvancedEntry x:Name="email"
+                                             Placeholder="อีเมลล์"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             Annotation="Email"
+                                             TextChanged="email_TextChanged"
+                        />
+                        <input:AdvancedEntry x:Name="mobilePhone"
+                                             Placeholder="เบอร์มือถือ"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             Annotation="DigitsOnly"
+                                             MaxLength="10"
+                                             TextChanged="mobilePhone_TextChanged"
+                        />
+                        <input:AdvancedEntry x:Name="RegisterPassword"
+                                             Placeholder="รหัสผ่าน"
+                                             IsPassword="True"
+                                             TextColor="Black"
+                                             CornerRadius="5"
+                                             Margin="0,0,0,10"
+                                             FontFamily="SukhumvitSet-Medium.ttf#SukhumvitSet-Medium"
+                                             MinLength="6"
+                                             TextChanged="RegisterPassword_TextChanged"
+                        />
+                        <ActivityIndicator x:Name="loading" IsRunning="True" IsVisible="False"></ActivityIndicator>
+                        <Button x:Name="btnLogin" Text="ตกลง" HeightRequest="50" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" FontSize="20" Margin="20,20,20,0" CornerRadius="10" FontFamily="SukhumvitSet-SemiBold.ttf#SukhumvitSet-SemiBold" Clicked="Login_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
